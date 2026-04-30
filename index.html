@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,7 @@
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             overflow: hidden;
             animation: fadeInUp 0.8s ease-out;
         }
@@ -38,6 +39,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -65,8 +67,13 @@
         }
 
         @keyframes float {
-            0% { transform: translateX(-100px) translateY(-100px); }
-            100% { transform: translateX(0px) translateY(0px); }
+            0% {
+                transform: translateX(-100px) translateY(-100px);
+            }
+
+            100% {
+                transform: translateX(0px) translateY(0px);
+            }
         }
 
         .profile-img {
@@ -82,9 +89,11 @@
             color: white;
             position: relative;
             z-index: 2;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            object-fit: cover; /* garante que preencha sem distorcer */
-            border-radius: 50%; /* mantém redondo */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            /* garante que preencha sem distorcer */
+            border-radius: 50%;
+            /* mantém redondo */
         }
 
         .header-content {
@@ -96,7 +105,7 @@
             font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .title {
@@ -180,7 +189,7 @@
 
         .skill-category:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .skill-category h4 {
@@ -210,7 +219,7 @@
             border-radius: 12px;
             margin-bottom: 20px;
             border-left: 4px solid #667eea;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
 
@@ -258,7 +267,7 @@
 
         .status-badge {
             display: inline-block;
-            background: #e74c3c;
+            background: #27ae60;
             color: white;
             padding: 3px 10px;
             border-radius: 12px;
@@ -350,16 +359,19 @@
                 gap: 10px;
             }
         }
+
         .download-btn {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            background: linear-gradient(135deg, #3498db, #2980b9); /* azul forte */
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            /* azul forte */
             color: white;
             border: none;
             padding: 15px 20px;
             border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4); /* sombra azul */
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            /* sombra azul */
             cursor: pointer;
             font-size: 16px;
             font-weight: 600;
@@ -373,8 +385,10 @@
 
         .download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.6); /* sombra azul mais intensa */
-            background: linear-gradient(135deg, #2980b9, #2471a3); /* gradiente hover */
+            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.6);
+            /* sombra azul mais intensa */
+            background: linear-gradient(135deg, #2980b9, #2471a3);
+            /* gradiente hover */
         }
 
 
@@ -389,12 +403,15 @@
                 font-size: 14px;
             }
         }
-        .WppFlutuante{ /*IconWpp*/
+
+        .WppFlutuante {
+            /*IconWpp*/
             position: fixed;
             right: 0;
             bottom: 0;
         }
-        .ImgWppFlutante{
+
+        .ImgWppFlutante {
             cursor: pointer;
             position: relative;
             width: 45px;
@@ -402,29 +419,37 @@
             right: 10px;
             animation: slow 5s ease-out;
         }
-        #chat{
+
+        #chat {
             position: absolute;
             bottom: 0;
             right: 0;
             display: none;
             animation: slow 5s ease-out;
         }
+
         @keyframes slow {
             0% {
-              opacity: 0;
+                opacity: 0;
             }
+
             20% {
-              opacity: 1;
+                opacity: 1;
             }
+
             80% {
-              opacity: 1;
+                opacity: 1;
             }
+
             100% {
-              opacity: 1;
+                opacity: 1;
             }
         }
-        #relogio{ /*Horario do relogio*/
-            font-family:'Open Sans', sans-serif; font-weight: 700;
+
+        #relogio {
+            /*Horario do relogio*/
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
             position: relative;
             top: 73px;
             left: 13%;
@@ -433,7 +458,9 @@
             color: white;
             height: 5px;
         }
-        .FecharChat{ /*X do chat*/
+
+        .FecharChat {
+            /*X do chat*/
             position: absolute;
             display: block;
             text-align: center;
@@ -445,42 +472,51 @@
             font-size: 16px;
             cursor: pointer;
             width: 20px;
-            font-family:'Open Sans', sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
-        .FecharChat:hover{
+
+        .FecharChat:hover {
             font-size: 18px;
         }
-        #nome{ /*input 1*/
+
+        #nome {
+            /*input 1*/
             position: absolute;
             border-radius: 10px;
             height: 4.5%;
             bottom: 18%;
-            left:14%;
+            left: 14%;
             border: solid 2px black;
             display: block;
             width: 55%;
         }
-        #Assunto{ /*input 2*/
+
+        #Assunto {
+            /*input 2*/
             position: absolute;
             display: block;
             border: solid 2px black;
             height: 4.4%;
             bottom: 9.8%;
-            left:14%;
+            left: 14%;
             border-radius: 10px;
             width: 55%;
         }
-        .chatimg{ /*img de fundo do chat*/
+
+        .chatimg {
+            /*img de fundo do chat*/
             display: block;
             position: relative;
             width: 350px;
             right: 10px;
             top: 50px;
         }
-        #Enviar{ /*botao de enviar do chat*/
+
+        #Enviar {
+            /*botao de enviar do chat*/
             position: relative;
             border-radius: 50%;
-            color:red;
+            color: red;
             width: 40px;
             height: 40px;
             bottom: 40px;
@@ -490,37 +526,40 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
-            <div >
+            <div>
                 <img class="profile-img" src="./Img/2.jpg" alt="Foto Rodrigo">
             </div>
             <div class="header-content">
                 <h1 class="name">Rodrigo Escobar</h1>
-                <p class="title">Criatividade & Entusiasta</p>
+                <p class="title">Análise de Dados | Tecnologia | Perfil Analítico</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-birthday-cake"></i>
-                        <span>20 anos</span>
+                        <span>21 anos</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Taboão da Serra, SP</span>
+                        <span>Rua Dr. Luiz Migliano, Jardim Vazani, São Paulo - SP</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Última atualização: 08/2025</span>
+                        <span>Última atualização: 04/2026</span>
                     </div>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fa-solid fa-headphones"></i>
-                        <span><a href="https://wa.me/5511986120014?text=Olá, Rodrigo." target="_blank">Celular: (11) 9 8612-0014</a></span>
+                        <span><a href="https://wa.me/5511986120014?text=Olá, Rodrigo." target="_blank">Celular: (11) 9
+                                8612-0014</a></span>
                     </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <span><a href="mailto:rodrigoegdfff@gmail.com?Subject=Hello%20again" target="_blank">E-mail: rodrigoegdff@gmail.com</a></span>
+                        <span><a href="mailto:rodrigoegdfff@gmail.com?Subject=Hello%20again" target="_blank">E-mail:
+                                rodrigoegdff@gmail.com</a></span>
                     </div>
                 </div>
             </div>
@@ -533,7 +572,8 @@
                     Objetivo
                 </h2>
                 <div class="objective">
-                    Busco oportunidades na área de tecnologia para expandir meu conhecimento profissional e contribuir com projetos inovadores. Tenho paixão por criar e desenvolver, design digital e criação de experiências visuais impactantes. Estou determinado a aplicar minha criatividade e habilidades técnicas em desafios que me permitam crescer profissionalmente.
+                    Busco oportunidade na área de tecnologia com foco em análise de dados, aplicando raciocínio lógico e
+                    análise de informações para gerar insights e apoiar tomadas de decisão.
                 </div>
             </section>
 
@@ -543,111 +583,13 @@
                     Perfil Profissional
                 </h2>
                 <div class="objective">
-                    Entusiasta com forte capacidade analítica e pensamento inovador para resolução de problemas complexos. Valorizo o trabalho em equipe baseado no respeito mútuo e compreendo a importância de identificar as habilidades individuais para maximizar o potencial coletivo. Sempre busco soluções criativas e eficientes.
+                    Profissional com perfil analítico e experiência prática em análise de dados aplicada a negócios.
+                    Atuei com análise de mercado, produtos e desempenho, além do acompanhamento de métricas e otimização
+                    de resultados. Possuo facilidade com lógica, organização e resolução de problemas.
                 </div>
                 <div class="objective" style="position: relative; top: 10px;">
-                    Portifólio - <a href="https://github.com/RodrigoEscobar541" target="_blank"><strong>GitHub</strong></a>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-code"></i>
-                    Habilidades Técnicas
-                </h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-laptop-code"></i> Desenvolvimento</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
-                            <span class="skill-tag">Unity 2D</span>
-                            <span class="skill-tag">VS Code</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-paint-brush"></i> Design & 3D</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Blender 3D</span>
-                            <span class="skill-tag">Cinema 4D</span>
-                            <span class="skill-tag">Photoshop</span>
-                            <span class="skill-tag">Illustrator</span>
-                            <span class="skill-tag">After Effects</span>
-                            <span class="skill-tag">Arte Vetorial</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-drafting-compass"></i> CAD & Técnico</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">AutoCAD 2D</span>
-                            <span class="skill-tag">Excel Avançado</span>
-                            <span class="skill-tag">Sony Vegas Pro</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-graduation-cap"></i>
-                    Formação Acadêmica
-                </h2>
-                <div class="education-item">
-                    <h3>Engenharia de Software</h3>
-                    <p><strong>Uninter EAD</strong></p>
-                    <p>Início: 02/2024 <span class="status-badge">Trancado temporariamente</span></p>
-                    <p><em>Pretende retomar os estudos futuramente</em></p>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-certificate"></i>
-                    Cursos e Certificações
-                </h2>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Arte Digital Avançada</h3>
-                        <span class="experience-period">Mai 2024</span>
-                    </div>
-                    <p class="company-info"><a href="https://saga.com.br">SAGA</a> - Arte Vetorial, Composição, Pintura Digital, Efeitos Visuais, Cenários Blender</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Curso em vídeo - <a href="https://www.cursoemvideo.com">Gustavo Guanabara</a></h3>
-                        <span class="experience-period">Ago 2025</span>
-                    </div>
-                        <p class="company-info">MySQL, Inteligência Artificial<span class="status-badge">Cursando</span></p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Excel Básico ao Avançado</h3>
-                        <span class="experience-period">Set 2022</span>
-                    </div>
-                    <p class="company-info">Udemy</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">AutoCAD 2D</h3>
-                        <span class="experience-period">Jun 2022</span>
-                    </div>
-                    <p class="company-info">Udemy</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Modelagem Blender 3D</h3>
-                        <span class="experience-period">Mar 2019</span>
-                    </div>
-                    <p class="company-info">Happy Code</p>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Unity 2D</h3>
-                        <span class="experience-period">Jun 2018</span>
-                    </div>
-                    <p class="company-info">Happy Code</p>
+                    Portfólio - <a href="https://github.com/RodrigoEscobar541"
+                        target="_blank"><strong>GitHub</strong></a>
                 </div>
             </section>
 
@@ -658,10 +600,22 @@
                 </h2>
                 <div class="experience-item">
                     <div class="experience-header">
-                        <h3 class="experience-title">Motorista</h3>
-                        <span class="experience-period">Ago 2023 - Atual</span>
+                        <h3 class="experience-title">Analista de Dados</h3>
+                        <span class="experience-period">Out 2025 - Abr 2026</span>
                     </div>
-                    <p>Início: 08/2023 <span class="status-badge">Atual</span></p>
+                    <p class="company-info">We Solution</p>
+                    <p>• Análise de desempenho de contas e produtos<br>
+                        • Estudo de mercado e identificação de oportunidades<br>
+                        • Monitoramento de métricas (vendas, conversão, tráfego)<br>
+                        • Apoio na tomada de decisão baseada em dados<br>
+                        • Otimização de resultados<br>
+                        • Relacionamento com clientes</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Motorista</h3>
+                        <span class="experience-period">Ago 2023 - Set 2025</span>
+                    </div>
                     <p class="company-info">RDFexpress - Transportadora</p>
                 </div>
                 <div class="experience-item">
@@ -685,8 +639,102 @@
                     </div>
                     <p class="company-info">Nacional Comércio - Comércio/Importação</p>
                     <p>• Organização e controle de estoque<br>
-                    • Conferência de produtos importados<br>
-                    • Controle de qualidade e devoluções</p>
+                        • Conferência de produtos importados<br>
+                        • Controle de qualidade e devoluções</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Formação Acadêmica
+                </h2>
+                <div class="education-item">
+                    <h3>Engenharia de Software <span class="status-badge" style="background: #27ae60;">Cursando</span>
+                    </h3>
+                    <p><strong>Uninter EAD</strong></p>
+                    <p>Início: 02/2024</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    Cursos e Certificações
+                </h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">PAIN - <a href="https://pain.frankcosta.me">Frank Costa</a></h3>
+                        <span class="experience-period">Abr 2026</span>
+                    </div>
+                    <p class="company-info">Inteligência Artificial CRM<span class="status-badge">Cursando</span>
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Curso em vídeo - <a href="https://www.cursoemvideo.com">Gustavo
+                                Guanabara</a></h3>
+                        <span class="experience-period">Ago 2025</span>
+                    </div>
+                    <p class="company-info">MySQL, Inteligência Artificial <span class="status-badge">Cursando</span>
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Arte Digital Avançada</h3>
+                        <span class="experience-period">Mai 2024</span>
+                    </div>
+                    <p class="company-info"><a href="https://saga.com.br">SAGA</a> - Arte Vetorial, Composição, Pintura
+                        Digital, Efeitos Visuais, Cenários Blender</p>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <h3 class="experience-title">Excel Básico ao Avançado</h3>
+                        <span class="experience-period">Set 2022</span>
+                    </div>
+                    <p class="company-info">Udemy</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Habilidades Técnicas
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-laptop-code"></i> Desenvolvimento</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Claude</span>
+                            <span class="skill-tag">Antigravity</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-paint-brush"></i> Design & 3D</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Blender 3D</span>
+                            <span class="skill-tag">Cinema 4D</span>
+                            <span class="skill-tag">Photoshop</span>
+                            <span class="skill-tag">Illustrator</span>
+                            <span class="skill-tag">After Effects</span>
+                            <span class="skill-tag">Arte Vetorial</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-drafting-compass"></i> CAD & Técnico</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AutoCAD 2D</span>
+                            <span class="skill-tag">Excel Avançado</span>
+                            <span class="skill-tag">Sony Vegas Pro</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -718,7 +766,7 @@
                         <div class="info-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <p><strong>Localização</strong><br>Taboão da Serra, SP</p>
+                        <p><strong>Localização</strong><br>Rua Dr. Luiz Migliano, Jardim Vazani, São Paulo - SP</p>
                     </div>
                 </div>
             </section>
@@ -726,38 +774,39 @@
     </div>
     <div class="WppFlutuante"> <!--IconWpp-->
         <div id="chat">
-          <time id="relogio" datetime="2023-04-26T09:30:00-03:00"></time>
-          <div class="FecharChat" onclick="abrirchat()">x</div>
-          <img class="chatimg" src="./chatWhats/ChatImg.png" alt="IconWhatsappFlutuante">
-          <input type="text" id="nome" pattern="\d{2}/\d{2}/\d{4}" placeholder="Ex: Rodrigo Escobar">
-          <input type="text" id="Assunto">
-          <button id="Enviar" type="hidden" onclick="EnviarWpp()">C</button>
+            <time id="relogio" datetime="2023-04-26T09:30:00-03:00"></time>
+            <div class="FecharChat" onclick="abrirchat()">x</div>
+            <img class="chatimg" src="./chatWhats/ChatImg.png" alt="IconWhatsappFlutuante">
+            <input type="text" id="nome" pattern="\d{2}/\d{2}/\d{4}" placeholder="Ex: Rodrigo Escobar">
+            <input type="text" id="Assunto">
+            <button id="Enviar" type="hidden" onclick="EnviarWpp()">C</button>
         </div>
-        <img id="imgwhats" class="ImgWppFlutante" src="./chatWhats/WppFlutuante.png" onclick="abrirchat()" alt="Chat  Flutuante">
+        <img id="imgwhats" class="ImgWppFlutante" src="./chatWhats/WppFlutuante.png" onclick="abrirchat()"
+            alt="Chat  Flutuante">
     </div>
 
     <a href="Rodrigo_Escobar_Curriculo.pdf" download=""><button id="btndownloadpdf" class="download-btn">
-        <i class="fas fa-download"></i>
-        Baixar PDF
-    </button></a>
+            <i class="fas fa-download"></i>
+            Baixar PDF
+        </button></a>
 
     <script>
         let largura = window.innerWidth;
-            let displayBtnDownloadPdf = document.getElementById('btndownloadpdf');
+        let displayBtnDownloadPdf = document.getElementById('btndownloadpdf');
 
-            if (largura <= 768) {
-                displayBtnDownloadPdf.style.bottom = "unset";
-                displayBtnDownloadPdf.style.top = "30px";
-            }
+        if (largura <= 768) {
+            displayBtnDownloadPdf.style.bottom = "unset";
+            displayBtnDownloadPdf.style.top = "30px";
+        }
 
         // Animação suave ao rolar a página
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
@@ -776,17 +825,17 @@
             });
         });
 
-        function abrirchat(){ /*IconWpp*/
+        function abrirchat() { /*IconWpp*/
             let chat = window.document.getElementById('chat') //Img do chat
             let dropHamburguer = window.document.getElementById('DropHamburguer') //Lista Hamburguer
             let img = window.document.getElementById('OpenHamburguer'); //Img padrao hamburguer
             let listaStyle = window.getComputedStyle(chat);
-            if (listaStyle.display == 'none'){ //open
+            if (listaStyle.display == 'none') { //open
                 chat.style.display = 'block' //Abre o chat
-                
-            
+
+
                 img.style.width = '50px'
-            }else{
+            } else {
                 chat.style.display = 'none'
             }
 
@@ -799,14 +848,15 @@
             relogio.innerHTML = `${hora}:${minuto}`
         }
         setInterval(atualizarHora, 1000);
-        function EnviarWpp(){ /*Função do botao enviar do chatWpp*/
+        function EnviarWpp() { /*Função do botao enviar do chatWpp*/
             let nome = window.document.getElementById('nome').value
             let Assunto = window.document.getElementById('Assunto').value
-        
+
             let link = "https://wa.me/5511986120014?text=Olá, Rodrigo. Me chamo " + nome + ", e gostaria de tratar sobre: " + Assunto + ". Aguardo seu retorno!";
 
             window.open(link, '_blank');
         }
     </script>
 </body>
+
 </html>
