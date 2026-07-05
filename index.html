@@ -901,7 +901,7 @@
     <script>
         // Função para gerar PDF do currículo
         function generatePDF() {
-            // Garante que a captura comece sempre do topo e use o layout "desktop"
+            // Garante que a captura sempre comece do topo da página
             window.scrollTo(0, 0);
 
             const element = document.getElementById('cv-container');
@@ -909,7 +909,7 @@
                 margin: [10, 10, 10, 10],
                 filename: 'Rodrigo_Escobar_Curriculo.pdf',
                 image: { type: 'png' },
-                html2canvas: { scale: 2, useCORS: true, windowWidth: 900 },
+                html2canvas: { scale: 2, useCORS: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
                 pagebreak: {
                     mode: ['css', 'legacy'],
