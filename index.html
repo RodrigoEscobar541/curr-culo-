@@ -285,6 +285,32 @@
             line-height: 1.5;
         }
 
+        .project-card ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .project-card ul li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .project-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .project-card ul li strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
         .project-card.placeholder {
             border-left-color: #cbd5e1;
             cursor: default;
@@ -738,28 +764,43 @@
                             <i class="fab fa-github"></i>
                             <h3>Acessar GitHub</h3>
                         </div>
-                        <p>Acesse meu perfil principal para ver repositórios ativos e contribuições.</p>
+                        <p>Perfil principal, com os repositórios ativos e o código dos projetos abaixo.</p>
                     </a>
                     <a href="https://github.com/RodrigoEscobar541/Sistema-RDF-Public" target="_blank" class="project-card">
                             <div class="project-header">
                                 <i class="fas fa-laptop-code"></i>
                                 <h3>ERP RDF Express</h3>
                             </div>
-                            <p>Sistema ERP para gestão empresarial, com controle de clientes, cadastro de colaboradores e gerenciamento completo de Ordens de Serviço (OS). Conta com módulo de controle financeiro, autenticação de usuários e dashboard com estatísticas. Construído em JavaScript sobre o Firebase (BaaS), usando Firestore para persistência de dados e Firebase Authentication para login, com as coleções e regras de acesso estruturadas para integrar os módulos do sistema.</p>
+                            <p>ERP de gestão empresarial: clientes, colaboradores, Ordens de Serviço e financeiro.</p>
+                            <ul>
+                                <li><strong>Tecnologias:</strong> JavaScript, Firebase (Firestore + Authentication)</li>
+                                <li><strong>Conceitos:</strong> BaaS, modelagem de coleções NoSQL, regras de acesso no banco, autenticação de usuários</li>
+                                <li><strong>Entregas:</strong> módulos integrados e dashboard com estatísticas</li>
+                            </ul>
                     </a>
-                    <a href="https://ergoanalise.com.br/" target="_blank" class="project-card">
+                    <a href="https://github.com/RodrigoEscobar541/trading-bot-ia-multicorretora" target="_blank" class="project-card">
                             <div class="project-header">
-                                <i class="fas fa-laptop-code"></i>
-                                <h3>Site ErgoAnalise</h3>
+                                <i class="fas fa-robot"></i>
+                                <h3>Robô de Trading com IA</h3>
                             </div>
-                            <p>Landing page de conversão, presente no Google Search com os requisitos necessários para ter visibilidade como sitemap.xml, HTTPS, user-agent.txt</p>
+                            <p>Robô autônomo que analisa e opera em quatro corretoras, 24/7 em VPS.</p>
+                            <ul>
+                                <li><strong>Tecnologias:</strong> Node.js, Firestore, API do Gemini, integração com APIs REST e WebSocket das corretoras</li>
+                                <li><strong>Conceitos:</strong> IA aplicada a decisão, indicadores calculados em código (RSI, MACD), Motor de Regras determinístico com a última palavra sobre a IA</li>
+                                <li><strong>Engenharia:</strong> 443 testes automatizados, deploy automático e painel web de acompanhamento</li>
+                            </ul>
                     </a>
                     <a href="https://colinasdoitapety.netlify.app/" target="_blank" class="project-card">
                             <div class="project-header">
                                 <i class="fas fa-laptop-code"></i>
                                 <h3>Camping Colinas do Itapety</h3>
                             </div>
-                            <p>Landing Page Institucional para o negócio de família, visando mostrar os diferenciais do produto e o interesse da empresa em estar presente em todas as formas de divulgação</p>
+                            <p>Landing page institucional do negócio da família, no ar e indexada no Google.</p>
+                            <ul>
+                                <li><strong>Tecnologias:</strong> HTML, CSS e JavaScript, com deploy na Netlify</li>
+                                <li><strong>Conceitos:</strong> SEO on-page (sitemap.xml, robots.txt, meta tags), dados estruturados JSON-LD e Open Graph</li>
+                                <li><strong>Objetivo:</strong> página de conversão, responsiva, focada nos diferenciais do produto</li>
+                            </ul>
                     </a>
                 </div>
             </section>
