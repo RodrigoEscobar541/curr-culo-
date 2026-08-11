@@ -204,6 +204,7 @@
             page-break-inside: avoid;
         }
 
+
         /* Usada só quando o título é agrupado com o primeiro item (ex.: Experiência) */
         .first-entry .timeline-item:last-child {
             margin-bottom: 30px;
@@ -593,7 +594,7 @@
         /* --- Print Styles --- */
         @media print {
             @page {
-                margin: 12mm;
+                margin: 10mm;
             }
 
             body {
@@ -632,6 +633,100 @@
             .whatsapp-float,
             .btn-download {
                 display: none;
+            }
+
+            /* Conteúdo que fica só no site: some do PDF para mantê-lo enxuto.
+               NÃO usar em nada que um ATS precise ler (habilidades, contatos,
+               tecnologias) — o PDF é o que chega no sistema da empresa. */
+            .no-print {
+                display: none !important;
+            }
+
+            /* Ícones são glifos de fonte: somem do PDF para não poluir
+               a extração de texto feita por sistemas de ATS */
+            .section-title i,
+            .contact-item i,
+            .info-card i,
+            .project-header i {
+                display: none;
+            }
+
+            .section-title,
+            .contact-item,
+            .info-card {
+                gap: 0;
+            }
+
+            /* Nunca quebrar logo depois de um título: evita o título
+               órfão no pé da página com o conteúdo na página seguinte */
+            .section-title {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* --- Compactação para impressão ---
+               Espaçamentos generosos funcionam na tela, mas na folha viram
+               páginas extras. Aqui tudo encolhe sem alterar a hierarquia. */
+            .header {
+                padding: 20px 24px;
+                gap: 20px;
+            }
+
+            .profile-img {
+                width: 95px;
+                height: 95px;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .title {
+                margin-bottom: 12px;
+            }
+
+            .contact-grid {
+                gap: 6px 12px;
+                font-size: 0.82rem;
+            }
+
+            .content {
+                padding: 22px 24px;
+            }
+
+            .section {
+                margin-bottom: 22px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+                margin-bottom: 14px;
+                padding-bottom: 6px;
+            }
+
+            .projects-grid {
+                gap: 12px;
+            }
+
+            .project-card {
+                padding: 14px;
+            }
+
+            .timeline-item {
+                margin-bottom: 18px;
+            }
+
+            .skills-grid {
+                gap: 16px;
+            }
+
+            .info-grid,
+            .compact-list {
+                gap: 10px;
+            }
+
+            .info-card {
+                padding: 10px 12px;
             }
         }
 
@@ -683,9 +778,9 @@
                 <div class="header-top-row">
                     <div>
                         <h1 class="name">Rodrigo Escobar</h1>
-                        <p class="title">Automação de Processos &amp; Soluções com IA | Análise de Dados</p>
+                        <p class="title">Back-end &amp; Automação de Processos | Soluções com IA</p>
                     </div>
-                    <button class="btn-download" onclick="window.print()">
+                    <button class="btn-download" onclick="baixarPDF()">
                         <i class="fas fa-file-pdf"></i> Baixar PDF
                     </button>
                 </div>
@@ -718,31 +813,17 @@
         <main class="content">
             <section class="section keep-together">
                 <h2 class="section-title">
-                    <i class="fas fa-bullseye"></i>
-                    Objetivo Profissional
-                </h2>
-                <div class="text-block">
-                    Busco uma oportunidade para atuar com automação de processos e integração de Inteligência
-                    Artificial a sistemas de negócio, unindo minha experiência prática em análise de dados à
-                    capacidade de usar ferramentas de IA para prototipar e entregar soluções funcionais com agilidade.
-                    Meu diferencial é traduzir problemas reais de negócio em soluções técnicas rápidas e orientadas a
-                    resultado.
-                </div>
-            </section>
-
-            <section class="section keep-together">
-                <h2 class="section-title">
                     <i class="fas fa-user"></i>
-                    Perfil Profissional
+                    Resumo Profissional
                 </h2>
                 <div class="text-block">
-                    Estudante de Engenharia de Software com perfil analítico, forte na leitura de problemas de negócio
-                    e na tradução deles em soluções práticas. Minha experiência real está em análise de dados e
-                    acompanhamento de métricas, e no uso estratégico de ferramentas de IA para prototipar e entregar
-                    sistemas funcionais rapidamente — não em profundidade tradicional de back-end ou arquitetura de
-                    banco de dados relacional. Desenvolvo projetos próprios explorando automação de processos e
-                    Inteligência Artificial aplicada a sistemas, sempre buscando soluções pragmáticas e orientadas a
-                    resultado.
+                    Estudante de Engenharia de Software com foco em desenvolvimento back-end e automação de
+                    processos. Desenvolvo em JavaScript e Node.js, com integração a APIs REST e WebSocket,
+                    Firebase/Firestore e testes automatizados — de um ERP de gestão empresarial a um robô de
+                    trading com IA rodando 24/7 em produção. Vindo de uma experiência profissional em análise de
+                    dados, trago a leitura de métricas e de resultado de negócio para dentro das soluções que
+                    construo, e uso ferramentas de IA no fluxo de prototipagem para encurtar o caminho entre o
+                    problema e uma entrega funcional e testada.
                 </div>
             </section>
 
@@ -753,13 +834,9 @@
                         <i class="fab fa-github"></i>
                         Projetos & Portfólio
                     </h2>
-                    <div class="text-block" style="margin-bottom: 20px;">
-                        Confira meus repositórios no GitHub, onde aplico na prática conceitos de análise de dados,
-                        programação e desenvolvimento de sistemas.
-                    </div>
                 </div>
                 <div class="projects-grid">
-                    <a href="https://github.com/RodrigoEscobar541" target="_blank" class="project-card">
+                    <a href="https://github.com/RodrigoEscobar541" target="_blank" class="project-card no-print">
                         <div class="project-header">
                             <i class="fab fa-github"></i>
                             <h3>Acessar GitHub</h3>
@@ -790,7 +867,7 @@
                                 <li><strong>Engenharia:</strong> 443 testes automatizados, deploy automático e painel web de acompanhamento</li>
                             </ul>
                     </a>
-                    <a href="https://colinasdoitapety.netlify.app/" target="_blank" class="project-card">
+                    <a href="https://colinasdoitapety.netlify.app/" target="_blank" class="project-card no-print">
                             <div class="project-header">
                                 <i class="fas fa-laptop-code"></i>
                                 <h3>Camping Colinas do Itapety</h3>
@@ -820,10 +897,13 @@
                         <div class="timeline-company">We Solution</div>
                         <div class="timeline-desc">
                             <ul>
-                                <li>Análise de desempenho de contas e produtos para otimização de resultados.</li>
-                                <li>Monitoramento de métricas essenciais (vendas, conversão e tráfego).</li>
-                                <li>Estudo de mercado e identificação de oportunidades estratégicas.</li>
-                                <li>Apoio direto na tomada de decisão baseada em dados e relacionamento com clientes.</li>
+                                <li>Análise de investimento e desempenho de campanhas no Shopee Ads em uma
+                                    carteira de ~10 contas, ajustando verba por anúncio para melhorar o retorno
+                                    em vendas.</li>
+                                <li>Acompanhamento recorrente de métricas de vendas, conversão e tráfego,
+                                    consolidando os dados das contas para comparação de performance.</li>
+                                <li>Identificação de produtos e anúncios com baixo retorno, embasando as decisões
+                                    de realocação de verba.</li>
                             </ul>
                         </div>
                     </div>
@@ -842,11 +922,6 @@
                         <div class="compact-item-period">Ago 2023 - Set 2025</div>
                     </div>
                     <div class="compact-item">
-                        <div class="compact-item-main">Cadista (Temporário) <span class="company">— Setor
-                                Engenharia</span></div>
-                        <div class="compact-item-period">Mar 2022 - Dez 2023</div>
-                    </div>
-                    <div class="compact-item">
                         <div class="compact-item-main">Garçom (Temporário) <span class="company">— Setor
                                 Alimentação</span></div>
                         <div class="compact-item-period">Ago 2022 - Abr 2023</div>
@@ -855,8 +930,6 @@
                         <div class="compact-item-main">Controle de Qualidade / Estoquista <span class="company">—
                                 Nacional Comércio (Importação)</span></div>
                         <div class="compact-item-period">Ago 2019 - Mar 2020</div>
-                        <div class="compact-item-desc">Organização e controle de estoque de produtos importados;
-                            gestão de controle de qualidade e devoluções.</div>
                     </div>
                 </div>
             </section>
@@ -904,29 +977,6 @@
 
             <section class="section keep-together">
                 <h2 class="section-title">
-                    <i class="fas fa-language"></i>
-                    Idiomas
-                </h2>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <i class="fas fa-comment-dots"></i>
-                        <div class="info-card-content">
-                            <h4>Português</h4>
-                            <p>Nativo</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-comment-dots"></i>
-                        <div class="info-card-content">
-                            <h4>Inglês</h4>
-                            <p>Intermediário</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section keep-together">
-                <h2 class="section-title">
                     <i class="fas fa-code"></i>
                     Habilidades Técnicas
                 </h2>
@@ -936,63 +986,48 @@
                         <div class="tags-container">
                             <span class="tag">JavaScript</span>
                             <span class="tag">Python</span>
+                            <span class="tag">Node.js</span>
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
                             <span class="tag">MySQL</span>
+                            <span class="tag">Firebase / Firestore</span>
+                            <span class="tag">APIs REST</span>
                             <span class="tag">Git & GitHub</span>
-                            <span class="tag">VS Code</span>
                             <span class="tag">Excel Avançado</span>
                         </div>
                     </div>
                     <div class="skill-group">
-                        <h4>Design & CAD</h4>
+                        <h4>IA Aplicada & Automação</h4>
                         <div class="tags-container">
-                            <span class="tag">AutoCAD 2D</span>
-                            <span class="tag">Blender 3D</span>
-                            <span class="tag">Photoshop</span>
-                            <span class="tag">Illustrator</span>
-                            <span class="tag">After Effects</span>
-                            <span class="tag">Figma</span>
+                            <span class="tag">Claude</span>
+                            <span class="tag">API do Gemini</span>
+                            <span class="tag">Antigravity</span>
+                            <span class="tag">IA CRM</span>
+                            <span class="tag">Automação de Processos</span>
+                            <span class="tag">Testes Automatizados</span>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            <section class="section keep-together">
-                <h2 class="section-title">
-                    <i class="fas fa-robot"></i>
-                    Ferramentas de IA Aplicada
-                </h2>
-                <div class="text-block" style="margin-bottom: 15px;">
-                    Uso ferramentas de IA como parte do meu fluxo de automação e prototipagem, para acelerar a entrega
-                    de soluções funcionais e reduzir o tempo entre identificar um problema de negócio e ter uma
-                    solução testável.
-                </div>
-                <div class="tags-container">
-                    <span class="tag">Claude</span>
-                    <span class="tag">Antigravity</span>
-                    <span class="tag">IA CRM</span>
                 </div>
             </section>
 
             <section class="section keep-together">
                 <h2 class="section-title">
                     <i class="fas fa-info-circle"></i>
-                    Informações Adicionais
+                    Idiomas & Informações Adicionais
                 </h2>
                 <div class="info-grid">
                     <div class="info-card">
-                        <i class="fas fa-car"></i>
+                        <i class="fas fa-language"></i>
                         <div class="info-card-content">
-                            <h4>Habilitação</h4>
-                            <p>CNH A e B</p>
+                            <h4>Idiomas</h4>
+                            <p>Português (nativo) · Inglês (intermediário)</p>
                         </div>
                     </div>
                     <div class="info-card">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-passport"></i>
                         <div class="info-card-content">
-                            <h4>Militar</h4>
-                            <p>Dispensa Militar</p>
+                            <h4>Cidadania Portuguesa</h4>
+                            <p>Certidão Portuguesa e Passaporte</p>
                         </div>
                     </div>
                     <div class="info-card">
@@ -1002,6 +1037,13 @@
                             <p>Integral</p>
                         </div>
                     </div>
+                    <div class="info-card no-print">
+                        <i class="fas fa-car"></i>
+                        <div class="info-card-content">
+                            <h4>Habilitação</h4>
+                            <p>CNH A e B</p>
+                        </div>
+                    </div>
                     <div class="info-card">
                         <i class="fas fa-birthday-cake"></i>
                         <div class="info-card-content">
@@ -1009,11 +1051,11 @@
                             <p>21 anos</p>
                         </div>
                     </div>
-                    <div class="info-card">
-                        <i class="fas fa-passport"></i>
+                    <div class="info-card no-print">
+                        <i class="fas fa-shield-alt"></i>
                         <div class="info-card-content">
-                            <h4>Cidadania Portuguesa</h4>
-                            <p>Certidão Portuguesa e Passaporte</p>
+                            <h4>Militar</h4>
+                            <p>Dispensa Militar</p>
                         </div>
                     </div>
                 </div>
@@ -1026,6 +1068,23 @@
         target="_blank" class="whatsapp-float" aria-label="Contato pelo WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        // O navegador usa o <title> como nome sugerido ao salvar em PDF.
+        // Vários ATS indexam o nome do arquivo, então trocamos o título
+        // durante a impressão e restauramos em seguida.
+        const TITULO_PAGINA = document.title;
+        const TITULO_PDF = 'Rodrigo-Escobar-Analista-de-Dados';
+
+        function baixarPDF() {
+            document.title = TITULO_PDF;
+            window.print();
+        }
+
+        window.addEventListener('afterprint', () => {
+            document.title = TITULO_PAGINA;
+        });
+    </script>
 
 </body>
 
